@@ -1,0 +1,160 @@
+body{
+                margin:0;
+                width: 100%;
+                background-color: bisque;
+background-repeat: no-repeat;background-size:cover;
+            }
+            td{
+                text-align: center;
+            }
+            #top1{
+                background-color: lightcoral;
+                width: 100%;
+                height: 140px;
+               display: inline-block;
+               text-align: center;
+               font-size: 15px;
+               margin-left: auto;
+               margin-right: auto;
+               top:0;
+               z-index: 0;
+            }.bt1{
+               display: inline-block;
+               float: right;
+margin-left: 10px;
+margin-right: 10px;
+background-color:lightcyan;
+border-radius: 8px;
+height: 40px;
+color:crimson;
+text-decoration: solid;
+    border-style: none;
+cursor: pointer;outline: none;text-align: center;
+            }
+             h2{
+                display: inline;
+                text-decoration:underline;
+                font-family:cursive;
+            }
+            h3{
+                font-family:serif;
+                text-decoration:underline;
+                color:red;
+                font-size:30px;
+            }
+            #content{border: 2px;height: 500px;
+width: 90%;padding: 25px;
+background-color:transparent;
+border-style:outset;
+box-shadow: 0px 0px 4px 4px burlywood;
+            color:tomato;
+            font-size: 20px;
+            margin-left: 2%;}
+ .t1{font-size: 12px;padding-bottom: 8px;
+margin-bottom: 15px;border:1px solid outset; 
+box-shadow: 0px 0px 2px 2px whitesmoke;
+width: 328px;padding-top: 10px;
+border-top-style: none; border-left-style: none; border-right-style: none;
+ outline: none;}
+ .bt2{
+background-color:lightcyan;
+border-radius: 8px;
+height: 50px;
+width: 100px;
+color:crimson;
+text-decoration: solid;
+    border-style: none;
+cursor: pointer;outline: none;text-align: center;
+            font-size: 20px;
+ }
+ .goto{
+     border-radius: 45px;
+ }
+.content {background-color:lightsalmon;display: none;
+position: absolute;min-width: 150px;right: 0;
+border-radius: 10px;}
+.btd{ background-color:lightsalmon;padding-left: auto;
+padding-right: auto;padding-bottom: 0;
+padding-top: 0;font-size: 15px;
+color:black;border-style: none;
+cursor: pointer;outline: none;text-align: center;
+height: 40px;}
+.carlist{
+                height: 400px;
+                width: 40%;
+            }
+            #maincars{
+                width: 100%;
+            }
+            .imgs{
+                height: 395px;
+                width: 99%;
+            }
+            #brand{
+                background-color:lightsalmon;
+                width: 100%;
+            }
+            #footer{
+                 background-color:lightsalmon;
+                width: 100%;
+            }
+            .brandimg{
+                height: 150px;
+                width:150px;
+              padding-bottom: auto;
+              padding-top: auto;
+              padding-left: auto;
+              padding-right: auto;
+            }
+            #brandings{
+                display:inline-block;
+                margin-left: 20%;
+            }
+            .imgcontainer{
+                height: 200px;
+                width: 200px;
+            }
+            .imgcontainer:hover{
+                background-color:burlywood;
+                border-radius: 20px;
+                cursor:pointer;
+            }
+            #pagebutton{
+                padding: 10px;
+               height: 40px;
+               background-color:darksalmon;
+            }
+            .menu__link{
+                float:right;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 10px; 
+                background-color:burlywood;
+               margin-left: 10px;
+               margin-right: 10px;
+                cursor: pointer;
+            }
+            .submit{
+                background-color:burlywood;
+                width: 30%;height: 40px;
+                border-radius: 20px;
+                font-size: 20px;
+            }.allcars{
+                height: 300px;
+                width: 20%;
+                margin: 0;
+                padding: 0;
+            }#cardet{
+                width:20%;
+            }.imag{
+       height: 300px; width: 100%;
+        }
+        .book{
+            background-color:darksalmon;
+            height: 30px;
+            cursor: pointer;
+            width: 100%;
+        }
+        summary{
+                cursor: pointer;
+            }

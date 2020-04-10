@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>ADMIN LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css"/>
+    </head>
+    <body><style>
+            body{
+                margin:0;
+                width: 100%;
+                background-image: url(images/registerback.jpg);
+background-repeat: no-repeat;background-size:cover;
+            }
+            form{border: 2px;height: 500px;
+width: 340px;padding: 25px;
+background-color:transparent;
+border-style:outset;
+ margin-right: auto;margin-left: auto;}
+form:hover{box-shadow: 0px 0px 4px 4px burlywood;}
+
+        </style>
+        <div id="top1">
+            <a href="index.html">
+    		<img src="images/carlogo.png" style="height: 150px; width:160px; float: left;">
+            </a><h2><br><br>WELCOME TO ONLINE CAR STORE</h2>
+        </div>
+    <hr><center><h3>ADMIN LOGIN</h3></center><hr><br>
+    <form name="log" style="height:350px;">
+            <table align="left"><tr>
+                     <td><b><input type="text" name="uid" onblur="Uidchk()" class="t1" placeholder="USERID" required/></b></td>
+                </tr><tr>
+                     <td><b><div id="duid"></div></b></td>
+                    </tr><tr>
+                        <td><b><input type="password" name="pass" onblur="passlen()" class="t1" placeholder="PASSWORD" required/></b></td>
+                </tr><tr>
+                    <td><b><div id="plen"></div></b></td>
+                </tr><tr>
+                    <td><center><input type="submit" name="submit" value="LOGIN" onclick="beforeSubmit()" formaction="adminloginjsp.jsp" class="bt2"/><br><br>
+                    <input type="reset" name="reset" value="CANCEL" onclick="clear()" class="bt2"/></center></td>
+                </tr>
+            </table></form>
+     <script language="Javascript">
+      function Uidchk(){
+          if(!log.uid.value.match(/^\d{10}$/)){
+              document.getElementById("duid").innerHTML="Invalid User ID"; 
+              log.uid.value="";
+              log.uid.focus();}
+          else{document.getElementById("duid").innerHTML="";}}
+      function clear(){
+          log.uid.value="";
+          log.pass.value="";}
+      function beforeSubmit(){
+          if(log.uid.value.length==0||log.pass.value.length==0){
+              alert("FIELDS CANNOT BE EMPTY");}}
+      function passlen(){
+          if(log.pass.value.length<8){
+              document.getElementById("plen").innerHTML="Password Should be of 8 character";
+              log.pass.value="";
+              log.pass.focus();}
+          else{document.getElementById("plen").innerHTML="";}}
+                    </script>
+<div id="footer"><center><h2>&copy; CAR ZONE INC.</h2></center></div></body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>REGISTER</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css"/>
+        <style>
+            body{
+                margin:0;
+                width: 100%;
+                background-image: url(images/registerback.jpg);
+background-repeat: no-repeat;background-size:cover;
+            }
+            form{border: 2px;height: 700px;
+width: 340px;padding: 25px;
+background-color:transparent;
+border-style:outset;
+ margin-right: auto;margin-left: auto;}
+            form:hover{box-shadow: 0px 0px 4px 4px burlywood;}
+        </style>
+    </head>
+    <body>
+        <div id="top1">
+            <a href="index.html">
+    		<img src="images/carlogo.png" style="height: 150px; width:160px; float: left;">
+            </a><h2><br><br>WELCOME TO ONLINE CAR STORE</h2>
+            <a href="login.html"><button  class="bt1"><b>LOGIN</b></button></a>
+        </div>
+    <hr><center><h3>REGISTER HERE</h3></center><hr><br>
+    <form name="reg">
+        <table align="center">
+                <tr>
+                    <td><b><input type="text" name="name" onblur="namechk()" class="t1" placeholder="FULLNAME *" required/></b></td>
+                </tr><tr>
+                    <td><b><div id="dname"></div></b></td>
+                    </tr><tr>
+                        <td><b><textarea name="add" cols="21" rows="4" class="t1" placeholder="ADDRESS *" onblur="addchk()" required></textarea></b></td>
+                </tr> <tr>
+                     <td><b><div id="dadd"></div></b></td>
+                </tr><tr>
+                    <td><b><input type="text" name="num" onblur="numchk()" class="t1" placeholder="PHONE NUMBER *" required/></b></td>
+                </tr><tr>
+                     <td><b><div id="dphone"></div></b></td>
+                </tr>
+                <tr>
+                        <td><b><input type="email" name="mail" onblur="Emailchk()" class="t1" placeholder="EMAIL ADDRESS *" required/></b></td>
+                    </tr> <tr>
+                        <td><b><div id="demail"></div></b></td>
+                    </tr>
+                    <tr>
+                        <td><b><input type="password" name="pass" onblur="passlen()" class="t1" placeholder="PASSWORD *" required/></b></td>
+                </tr><tr>
+                    <td><b><div id="plen"></div></b></td>
+                </tr><tr>
+                    <td><b><input type="password" name="cpass" onblur="conpass()" class="t1" placeholder="CONFIRM PASSWORD *" required/></b></td>
+                </tr><tr>
+                    <td><b><div id="dconpass"></div></b></td>
+                    </tr>
+                    <tr><td><b><select id="idtype" class="t1" name="id" onchange="view()" required>
+    <option value="selectid">--- Please select ID Proof ---</option>
+    <option value="aadhar">AADHAR CARD</option>
+    <option value="pan">PAN CARD</option></select></b></td></tr>
+                    <tr><td><b>
+                                <input type="text" class="t1" name="aadhar" id="aadhar" placeholder="ENTER YOUR AADHAR NUMBER *" style='display:none;' onblur="aadharchk()"/>
+                                <input type="text" class="t1" name="pan" id="pan" placeholder="ENTER YOUR PAN NUMBER *" style='display:none;' onblur="panchk()"/></b></td>
+                    </tr>
+                   <tr>
+                    <td><b><div id="idproof"></div></b></td>
+                    </tr>
+                    <tr><td><br><br><center>
+                        <b style="color:white;"><u>NOTE </u>: Please make sure your details are correct
+                    before submitting the form and all the fields marked with * is
+                    complete....</b></center><br></td></tr>
+                    <tr><td><b><div id="damount"></div></b></td></tr><tr>
+                    <td><center><button class="bt2" name="submit" onclick="beforeSubmit()" formaction="registerjsp.jsp">Register</button><br><br>
+                    <button class="bt2" name="reset" onclick="clear()" formaction="register.html">Clear</button></center></td>
+                </tr>
+                    <script type="text/javascript">  
+function view(){
+ var element1=document.getElementById('aadhar');
+ var element2=document.getElementById('pan');
+ if(document.getElementById("idtype").value=='aadhar')
+ {element1.style.display='block';
+    element2.style.display='none';
+}
+ else if(document.getElementById("idtype").value=='pan'){
+   element2.style.display='block';
+    element1.style.display='none';
+}}
+function aadharchk(){
+    var element1=document.getElementById('aadhar');
+ if(!element1.value.match(/^\d{12}$/)){
+    document.getElementById("idproof").innerHTML="Invalid Aadhar Number. ";
+               element1.value="";
+               element1.focus();}
+           else{document.getElementById("idproof").innerHTML=""; }}
+function panchk(){
+     var element2=document.getElementById('pan');
+     if(!element2.value.match(/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/)){
+    document.getElementById("idproof").innerHTML="Invalid PAN Number. ";
+               element2.value="";
+               element2.focus();}
+           else{element2.value.toUpperCase();
+               document.getElementById("idproof").innerHTML=""; }}
+function namechk(){
+               if(reg.name.value.length==0 || !(reg.name.value.match(/^[A-Za-z]+$/))){
+                   document.getElementById("dname").innerHTML="Invalid Name";
+                   reg.name.value="";
+                   reg.name.focus();}
+           else{document.getElementById("dname").innerHTML="";}}
+       function addchk(){
+               if(reg.add.value.length==0){
+                   document.getElementById("dadd").innerHTML="Address Cannot be Empty";
+                   reg.add.value="";
+                   reg.add.focus();}
+           else{document.getElementById("dadd").innerHTML="";}}
+   function numchk(){
+       if(!reg.num.value.match(/^[1-9]{1}[0-9]{9}$/)){
+            document.getElementById("dphone").innerHTML="Invalid Phone Number";
+            reg.num.value="";
+            reg.num.focus();}
+           else{document.getElementById("dphone").innerHTML="";}}
+       function Emailchk(){
+           if(!reg.mail.value.match(/\S+@\S+\.com/)){
+               document.getElementById("demail").innerHTML="Invalid Email";
+               reg.mail.value="";
+                   reg.mail.focus();}
+           else{document.getElementById("demail").innerHTML="";}}
+       function passlen(){
+          if(reg.pass.value.length<8){
+              document.getElementById("plen").innerHTML="Password Should be of 8 character";
+              reg.pass.focus();}
+          else{document.getElementById("plen").innerHTML=""; }}
+      function conpass(){
+          if(reg.pass.value!=reg.cpass.value){
+              document.getElementById("dconpass").innerHTML="Password MisMatched";
+              reg.cpass.value=""; }
+          else{document.getElementById("dconpass").innerHTML="";}}
+      function clear(){
+          reg.name.value="";
+          reg.add.value="";
+          reg.num.value="";
+          reg.mail.value="";
+          reg.pass.value="";
+          reg.cpass.value="";
+          reg.id.value="";
+          reg.aadhar.value="";
+          reg.pan.value="";
+      }
+      function beforeSubmit(){
+          if(reg.name.value.length==0||reg.add.value.length==0||reg.num.value.length==0||reg.pass.value.length==0||reg.cpass.value.length==0||reg.id.value.length==0||reg.mail.value.lenght==0){
+          alert("FIELDS CANNOT BE EMPTY");}}  
+</script> 
+        </table>
+    </form><div id="footer"><center><h2>&copy; CAR ZONE INC.</h2></center></div>
+    <div id="goto"><span><a href="#top1"><img class="goto" src="images/gototop.jpg" height="90" width="90" style="float: right;"/></a></span></div>
+    </body>
+</html>
